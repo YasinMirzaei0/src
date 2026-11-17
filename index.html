@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MirWeb — Web Design Portfolio</title>
+<meta name="description" content="MirWeb: cinematic, fast, mobile-ready website design. Portfolio of web design work and a quick order form.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MirWeb — Web Design Portfolio">
+<meta property="og:description" content="Cinematic, fast, mobile-ready websites. See my work and order yours.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><b>MIRWEB</b><span></span></div>
+<canvas id="stars"></canvas>
+<div id="bar"></div>
+<div id="cur"><i></i></div>
+<nav id="nav">
+  <a class="logo" href="#top">MIRWEB</a>
+  <div class="right"><a class="cta" href="#order">Order Now</a><button id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button></div>
+</nav>
+<div id="menu"><a href="#top">Home</a><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#process">Process</a><a href="#order">Order</a></div>
+<div class="dots" id="dots"></div>
+
+<section id="top">
+  <div class="bg b1"></div>
+  <canvas id="gl"></canvas>
+  <video id="hv" autoplay muted loop playsinline preload="metadata"><source src="purple-desert.mp4" type="video/mp4"></video>
+  <div class="shade"></div>
+  <div class="hero-in">
+  <h1 class="split">Websites<br>Built For Impact</h1>
+  <p class="sub rv">Cinematic, fast and mobile-ready web design for brands that want to stand out.</p>
+  <div class="btns rv"><a class="cta" href="#order">Order Now</a><a class="cta ghost" href="#work">See My Work</a></div>
+  </div>
+  <div class="arrow"></div>
+</section>
+
+<div class="marquee"><div class="mq"><span>Web Design</span><span>UI / UX</span><span>React</span><span>Motion</span><span>Branding</span></div></div>
+
+<section id="services" class="center">
+  <div class="bg b2"></div>
+  <h2 class="split">What I Design</h2>
+  <p class="sub rv">From a single landing page to a full online store.</p>
+  <div class="grid">
+    <div class="card rv"><div class="num">01</div><h3>Portfolio Sites</h3><p>Personal and brand sites with smooth, story-driven scrolling.</p></div>
+    <div class="card rv"><div class="num">02</div><h3>Online Stores</h3><p>Clean product pages, cart and checkout flows that convert.</p></div>
+    <div class="card rv"><div class="num">03</div><h3>UI / UX Design</h3><p>Interfaces that feel natural on every screen size.</p></div>
+  </div>
+</section>
+
+<section id="work" class="hs">
+  <div class="sticky">
+    <div class="wh"><h2 class="split">Selected Work</h2><div class="hp"><i id="hpf"></i></div></div>
+    <div class="track">
+      <a class="pc" href="#order" data-n="01"><div class="pv" style="background:linear-gradient(135deg,#f3e6d0,#8a5a3c)"></div><span class="go">View &rarr;</span><div class="pi"><h3>Shell Caf&eacute;</h3><p>3D menu website, warm cream palette</p></div></a>
+      <a class="pc" href="#order" data-n="02"><div class="pv" style="background:linear-gradient(135deg,#1f6b43,#d9f2c4)"></div><span class="go">View &rarr;</span><div class="pi"><h3>Zero Calories</h3><p>Minimal 3D restaurant site with menu and cart</p></div></a>
+      <a class="pc" href="#order" data-n="03"><div class="pv" style="background:linear-gradient(135deg,#0b1f4d,#7da2ff)"></div><span class="go">View &rarr;</span><div class="pi"><h3>VANDA</h3><p>Offline inventory app for a clothing store</p></div></a>
+      <a class="pc last" href="#order"><h3 style="font-size:clamp(28px,4vw,56px);text-transform:uppercase;text-align:center;line-height:1.05">Your project<br>is next &rarr;</h3></a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="center">
+  <div class="bg b2"></div>
+  <h2 class="split">About Me</h2>
+  <div class="about">
+    <div class="me rv"><span>M</span><img src="me.webp" alt="MirWeb" onerror="this.remove()"></div>
+    <div class="rv">
+      <p>I’m the designer and developer behind MirWeb. I turn ideas into fast, good-looking websites, from the first sketch to launch, designed around your brand and built to work on every screen.</p>
+      <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>UI / UX</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="center">
+  <div class="bg b4"></div>
+  <h2 class="split">How It Works</h2>
+  <div class="grid">
+    <div class="card rv"><div class="num">1</div><h3>Share Your Idea</h3><p>Leave your name and number below.</p></div>
+    <div class="card rv"><div class="num">2</div><h3>Design</h3><p>I send a concept you can react to.</p></div>
+    <div class="card rv"><div class="num">3</div><h3>Launch</h3><p>Your site goes live, fast and responsive.</p></div>
+  </div>
+</section>
+
+<section id="order" class="center">
+  <div class="bg b1"></div>
+  <h2 class="split">Order Your Website</h2>
+  <p class="sub rv">Leave your details and I’ll call you back.</p>
+  <form id="f" class="rv">
+    <input id="name" placeholder="Your name" autocomplete="name" required>
+    <input id="phone" type="tel" placeholder="Phone number" autocomplete="tel" required>
+    <button class="cta" type="submit">Order Now</button>
+    <div id="msg" role="status"></div>
+  </form>
+  <div class="contact rv">
+    <a href="https://t.me/YOUR_ID" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 11l20-9-8 20-3-8z"/></svg>Telegram</a>
+    <a href="https://wa.me/98XXXXXXXXXX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z"/></svg>WhatsApp</a>
+    <a href="https://instagram.com/YOUR_ID" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Instagram</a>
+  </div>
+</section>
+
+<div class="bigword" id="bw">MIRWEB</div>
+<footer><span>© 2026 MirWeb</span><span>Web design &amp; development</span></footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
