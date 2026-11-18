@@ -9,7 +9,7 @@
   var hv=document.getElementById('hv');
   hv.addEventListener('canplay',function(){hv.classList.add('ok');var p=hv.play();if(p&&p.catch)p.catch(function(){})});
   var bt=document.getElementById('burger'),mn=document.getElementById('menu');
-  function tg(o){var on=o===undefined?!mn.classList.contains('open'):o;mn.classList.toggle('open',on);bt.classList.toggle('x',on);bt.setAttribute('aria-expanded',on);document.body.style.overflow=on?'hidden':''}
+  function tg(o){var on=o===undefined?!mn.classList.contains('open'):o;mn.classList.toggle('open',on);document.documentElement.classList.toggle('mopen',on);bt.classList.toggle('x',on);bt.setAttribute('aria-expanded',on);document.body.style.overflow=on?'hidden':''}
   bt.onclick=function(){tg()};[].forEach.call(mn.querySelectorAll('a'),function(a){a.onclick=function(){tg(false)}});
   addEventListener('keydown',function(e){if(e.key==='Escape')tg(false)});
 
@@ -60,7 +60,7 @@
   // per-frame scroll-driven motion
   var hero=$('#top'),hs=$('#work'),tr=$('.track'),hpf=$('#hpf'),bw=$('#bw'),secs=$$('section'),dots=$$('#dots a'),last=scrollY,vel=0;
   var tops=[],hsTop=0,hsH=1,dist=0,ft=0,ly=-1,ca=-1,onv=null,nv=$('#nav'),dtsEl=$('#dots'),root=document.documentElement;
-  function mz(){tops=secs.map(function(s){return s.offsetTop});hsTop=hs.offsetTop;hsH=hs.offsetHeight;dist=Math.max(0,tr.scrollWidth-innerWidth);ft=bw.offsetTop;ly=-1}
+  function mz(){tops=secs.map(function(s){return s.offsetTop});hsTop=hs.offsetTop;hsH=hs.offsetHeight;dist=Math.max(0,tr.scrollWidth-innerWidth);ft=$('#order').offsetTop;ly=-1}
   mz();addEventListener('resize',mz);addEventListener('load',function(){mz();setTimeout(mz,800)});
   function frame(){
     var y=scrollY;vel+=((y-last)-vel)*.1;last=y;

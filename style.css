@@ -118,7 +118,7 @@ body.fine #cur{display:block}
 
 /* ---- theme layer: neutral glass, day / night ---- */
 :root[data-theme="night"]{color-scheme:dark;--bg:#050505;--fg:#fff;--mute:rgba(255,255,255,.74);--line:rgba(255,255,255,.22);--glass:rgba(255,255,255,.10);--hi:rgba(255,255,255,.26);--shade:linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.58));--navbg:rgba(0,0,0,.55);--spot:rgba(255,255,255,.14);--fallback:radial-gradient(circle at 50% 120%,#303030,#050505 62%)}
-:root[data-theme="day"]{color-scheme:light;--bg:#f3f3f1;--fg:#111;--mute:rgba(0,0,0,.68);--line:rgba(0,0,0,.16);--glass:rgba(255,255,255,.46);--hi:rgba(255,255,255,.85);--shade:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.68));--navbg:rgba(255,255,255,.62);--spot:rgba(0,0,0,.08);--fallback:radial-gradient(circle at 50% 120%,#fff,#d6d6d3 66%)}
+:root[data-theme="day"]{color-scheme:light;--bg:#f3f3f1;--fg:#111;--mute:rgba(0,0,0,.68);--line:rgba(0,0,0,.16);--glass:rgba(255,255,255,.46);--hi:rgba(255,255,255,.85);--shade:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.68));--navbg:rgba(255,255,255,.62);--spot:rgba(0,0,0,.08);--fallback:radial-gradient(circle at 50% 120%,#303030,#050505 62%)}
 body::before{content:"";position:fixed;inset:0;z-index:-3;background:var(--fallback)}
 #hv{position:fixed;z-index:-2}
 .shade{position:fixed;inset:0;z-index:-1;background:var(--shade);pointer-events:none}
@@ -206,3 +206,15 @@ form{max-width:460px}
 .phone input{flex:1;min-width:0}
 .bigword{display:block;width:100%;text-align:center}
 @media(max-width:560px){.cc select{min-width:118px;font-size:16px}}
+
+/* ---- v5: robust hero/footer without video, dark menu, small phones ---- */
+#menu{background:rgba(10,10,10,.78);--fg:#fff;--line:rgba(255,255,255,.22)}
+#menu a{color:#fff}
+html.mopen nav{--fg:#fff;--bg:#050505;--glass:rgba(255,255,255,.12);--line:rgba(255,255,255,.24);--hi:rgba(255,255,255,.28)}
+html.mopen nav.solid{background:transparent}
+@media(max-width:560px){.phone input{font-size:16px}.cc select{min-width:112px;padding-right:28px}}
+
+#top,footer,.bigword,nav.onvid,html.mopen nav,#menu{color:var(--fg)}
+
+#order{--fg:#fff;--bg:#050505;--mute:rgba(255,255,255,.76);--line:rgba(255,255,255,.28);--glass:rgba(255,255,255,.12);--hi:rgba(255,255,255,.28);color:var(--fg)}
+.bigword{color:transparent}
