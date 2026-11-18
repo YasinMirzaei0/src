@@ -3,7 +3,6 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:dark}
 *{box-sizing:border-box;margin:0}
 body{background:var(--bg);color:var(--fg);font-family:"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
-canvas#stars{position:fixed;inset:0;width:100%;height:100%;z-index:0}
 nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:calc(18px + env(safe-area-inset-top,0px)) 4vw 18px;transition:background .3s}
 nav.solid{background:rgba(0,0,0,.72);backdrop-filter:blur(12px)}
 .logo{font-weight:800;letter-spacing:.32em;font-size:15px;color:var(--fg);text-decoration:none}
@@ -85,14 +84,9 @@ footer{position:relative;z-index:1;padding:40px 4vw calc(40px + env(safe-area-in
 
 /* ---- pro motion layer ---- */
 .hero-in{will-change:transform,opacity;transform:translate3d(0,calc(var(--p,0)*-90px),0);opacity:calc(1 - var(--p,0)*1.4)}
-#top #hv,#top #gl{transform:scale(calc(1 + var(--p,0)*.2));filter:blur(calc(var(--p,0)*6px))}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em 0 .12em}
 .c{display:inline-block;font-style:normal;transform:translateY(115%) rotate(8deg);transition:transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*28ms)}
 .split.in .c{transform:none}
-.marquee{position:relative;z-index:1;overflow:hidden;border-block:1px solid var(--line);padding:3vh 0;background:rgba(0,0,0,.55);backdrop-filter:blur(8px)}
-.mq{display:flex;width:max-content;will-change:transform}
-.mq span{font-size:clamp(38px,8vw,110px);font-weight:800;text-transform:uppercase;white-space:nowrap;padding-right:3vw;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.7)}
-.mq span:nth-child(even){color:#fff;-webkit-text-stroke:0}
 .hs{display:block;padding:0;height:360vh;overflow:clip}
 .hs .sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;gap:5vh;overflow:hidden;background:radial-gradient(circle at 22% 30%,rgba(150,60,220,.5),transparent 48%),radial-gradient(circle at 82% 80%,rgba(230,60,140,.28),transparent 48%),linear-gradient(#071225,#05020c)}
 .wh{padding:0 4vw;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
@@ -121,3 +115,53 @@ body.fine #cur{display:block}
 #cur i{display:block;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1px solid #fff;transition:width .3s,height .3s,margin .3s,background .3s}
 #cur.h i{width:72px;height:72px;margin:-36px 0 0 -36px;background:#fff}
 @media(max-width:720px){.hs{height:300vh}.pc{width:80vw;height:50vh}}
+
+/* ---- theme layer: neutral glass, day / night ---- */
+:root[data-theme="night"]{color-scheme:dark;--bg:#050505;--fg:#fff;--mute:rgba(255,255,255,.74);--line:rgba(255,255,255,.22);--glass:rgba(255,255,255,.10);--hi:rgba(255,255,255,.26);--shade:linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.58));--navbg:rgba(0,0,0,.55);--spot:rgba(255,255,255,.14);--fallback:radial-gradient(circle at 50% 120%,#303030,#050505 62%)}
+:root[data-theme="day"]{color-scheme:light;--bg:#f3f3f1;--fg:#111;--mute:rgba(0,0,0,.68);--line:rgba(0,0,0,.16);--glass:rgba(255,255,255,.46);--hi:rgba(255,255,255,.85);--shade:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.68));--navbg:rgba(255,255,255,.62);--spot:rgba(0,0,0,.08);--fallback:radial-gradient(circle at 50% 120%,#fff,#d6d6d3 66%)}
+body::before{content:"";position:fixed;inset:0;z-index:-3;background:var(--fallback)}
+#hv{position:fixed;z-index:-2}
+.shade{position:fixed;inset:0;z-index:-1;background:var(--shade);pointer-events:none}
+body,#loader{background:var(--bg);color:var(--fg)}
+#loader span::after{background:var(--fg)}
+.cta{background:var(--fg);color:var(--bg)}
+nav.solid{background:var(--navbg)}
+#burger,#theme{background:var(--glass);box-shadow:inset 0 1px 0 var(--hi)}
+#burger i{background:var(--fg)}
+#theme{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);backdrop-filter:blur(14px) saturate(1.5);-webkit-backdrop-filter:blur(14px) saturate(1.5);display:grid;place-items:center;cursor:pointer;color:var(--fg)}
+#theme svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+#theme .moon{display:none}
+[data-theme="day"] #theme .moon{display:block}
+[data-theme="day"] #theme .sun{display:none}
+#menu{background:var(--navbg)}
+#menu a{color:var(--fg)}
+.card{background:var(--glass);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);box-shadow:inset 0 1px 0 var(--hi)}
+.card::after{background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),var(--spot),transparent 60%)}
+.contact a{color:var(--fg);box-shadow:inset 0 1px 0 var(--hi)}
+.chips span,.me{background:var(--glass)}
+.hs .sticky{background:none}
+.go{color:var(--fg)}
+.pi p{color:rgba(255,255,255,.78)}
+.pc.last{background:var(--fg);color:var(--bg)}
+.hp i,#bar{background:var(--fg)}
+.dots a{border-color:var(--fg)}
+.dots a.on{background:var(--fg)}
+#process .num{-webkit-text-stroke:1px var(--mute)}
+.bigword{-webkit-text-stroke:1px var(--line)}
+footer{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+input{color:var(--fg)}
+input::placeholder{color:var(--mute)}
+section.center{padding-top:100px}
+@media(max-width:560px){
+  nav{padding-left:5vw;padding-right:5vw}.right{gap:8px}.right .cta{display:none}.logo{letter-spacing:.24em}
+  h1{font-size:clamp(38px,11.5vw,60px)}h2{font-size:clamp(28px,9vw,44px)}.sub{font-size:15px}
+  section{padding-left:5vw;padding-right:5vw}section.center{padding-top:96px}
+  .about{gap:24px;justify-content:center;text-align:center}.chips{justify-content:center}.me{width:160px;height:160px;font-size:56px}
+  .pc{width:84vw;height:48vh;height:48svh}.grid{margin-top:20px}.contact a{padding:11px 14px}
+  #menu{padding:100px 28px 32px}.bigword{font-size:23vw}footer{flex-direction:column;align-items:flex-start}
+}
+
+/* ---- dark layer that fades in after the hero ---- */
+:root[data-theme="night"]{--dimc:rgba(0,0,0,.62)}
+:root[data-theme="day"]{--dimc:rgba(255,255,255,.6)}
+.shade::after{content:"";position:absolute;inset:0;background:var(--dimc);opacity:var(--dim,0);backdrop-filter:blur(calc(var(--dim,0)*8px));-webkit-backdrop-filter:blur(calc(var(--dim,0)*8px))}

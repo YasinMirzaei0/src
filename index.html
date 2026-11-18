@@ -10,25 +10,23 @@
 <meta property="og:title" content="MirWeb — Web Design Portfolio">
 <meta property="og:description" content="Cinematic, fast, mobile-ready websites. See my work and order yours.">
 <meta name="twitter:card" content="summary_large_image">
+<script>(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme:light)").matches?"day":"night";document.documentElement.setAttribute("data-theme",t)})()</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<video id="hv" autoplay muted loop playsinline preload="metadata"><source src="purple-desert.mp4" type="video/mp4"></video>
+<div class="shade"></div>
 <div id="loader"><b>MIRWEB</b><span></span></div>
-<canvas id="stars"></canvas>
 <div id="bar"></div>
 <div id="cur"><i></i></div>
 <nav id="nav">
   <a class="logo" href="#top">MIRWEB</a>
-  <div class="right"><a class="cta" href="#order">Order Now</a><button id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button></div>
+  <div class="right"><a class="cta" href="#order">Order Now</a><button id="theme" aria-label="Switch day / night theme"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1111 3a7 7 0 0010 10z"/></svg></button><button id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button></div>
 </nav>
 <div id="menu"><a href="#top">Home</a><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#process">Process</a><a href="#order">Order</a></div>
 <div class="dots" id="dots"></div>
 
 <section id="top">
-  <div class="bg b1"></div>
-  <canvas id="gl"></canvas>
-  <video id="hv" autoplay muted loop playsinline preload="metadata"><source src="purple-desert.mp4" type="video/mp4"></video>
-  <div class="shade"></div>
   <div class="hero-in">
   <h1 class="split">Websites<br>Built For Impact</h1>
   <p class="sub rv">Cinematic, fast and mobile-ready web design for brands that want to stand out.</p>
@@ -37,10 +35,7 @@
   <div class="arrow"></div>
 </section>
 
-<div class="marquee"><div class="mq"><span>Web Design</span><span>UI / UX</span><span>React</span><span>Motion</span><span>Branding</span></div></div>
-
 <section id="services" class="center">
-  <div class="bg b2"></div>
   <h2 class="split">What I Design</h2>
   <p class="sub rv">From a single landing page to a full online store.</p>
   <div class="grid">
@@ -63,7 +58,6 @@
 </section>
 
 <section id="about" class="center">
-  <div class="bg b2"></div>
   <h2 class="split">About Me</h2>
   <div class="about">
     <div class="me rv"><span>M</span><img src="me.webp" alt="MirWeb" onerror="this.remove()"></div>
@@ -75,7 +69,6 @@
 </section>
 
 <section id="process" class="center">
-  <div class="bg b4"></div>
   <h2 class="split">How It Works</h2>
   <div class="grid">
     <div class="card rv"><div class="num">1</div><h3>Share Your Idea</h3><p>Leave your name and number below.</p></div>
@@ -85,7 +78,6 @@
 </section>
 
 <section id="order" class="center">
-  <div class="bg b1"></div>
   <h2 class="split">Order Your Website</h2>
   <p class="sub rv">Leave your details and I’ll call you back.</p>
   <form id="f" class="rv">
