@@ -49,10 +49,10 @@
   <div class="sticky">
     <div class="wh"><h2 class="split">Selected Work</h2><div class="hp"><i id="hpf"></i></div></div>
     <div class="track">
-      <a class="pc" href="#order" data-n="01"><div class="pv" style="background:linear-gradient(135deg,#f3e6d0,#8a5a3c)"></div><span class="go">View &rarr;</span><div class="pi"><h3>Shell Caf&eacute;</h3><p>3D menu website, warm cream palette</p></div></a>
-      <a class="pc" href="#order" data-n="02"><div class="pv" style="background:linear-gradient(135deg,#1f6b43,#d9f2c4)"></div><span class="go">View &rarr;</span><div class="pi"><h3>Zero Calories</h3><p>Minimal 3D restaurant site with menu and cart</p></div></a>
-      <a class="pc" href="#order" data-n="03"><div class="pv" style="background:linear-gradient(135deg,#0b1f4d,#7da2ff)"></div><span class="go">View &rarr;</span><div class="pi"><h3>VANDA</h3><p>Offline inventory app for a clothing store</p></div></a>
-      <a class="pc last" href="#order"><h3 style="font-size:clamp(28px,4vw,56px);text-transform:uppercase;text-align:center;line-height:1.05">Your project<br>is next &rarr;</h3></a>
+      <div class="pc" data-n="01"><div class="pv" style="background:linear-gradient(135deg,#f3e6d0,#8a5a3c)"></div><div class="pi"><h3>Shell Caf&eacute;</h3><p>3D menu website</p><button class="dt" type="button">Details</button></div><div class="pd" hidden><p>Write about this project here: the goal, what you designed and built, the tools you used and the result.</p><a class="cta ghost" href="https://example.com" target="_blank" rel="noopener">Visit website</a></div></div>
+      <div class="pc" data-n="02"><div class="pv" style="background:linear-gradient(135deg,#1f6b43,#d9f2c4)"></div><div class="pi"><h3>Zero Calories</h3><p>3D restaurant site</p><button class="dt" type="button">Details</button></div><div class="pd" hidden><p>Write about this project here: the goal, what you designed and built, the tools you used and the result.</p><a class="cta ghost" href="https://example.com" target="_blank" rel="noopener">Visit website</a></div></div>
+      <div class="pc" data-n="03"><div class="pv" style="background:linear-gradient(135deg,#0b1f4d,#7da2ff)"></div><div class="pi"><h3>VANDA</h3><p>Inventory app</p><button class="dt" type="button">Details</button></div><div class="pd" hidden><p>Write about this project here: the goal, what you designed and built, the tools you used and the result.</p><a class="cta ghost" href="https://example.com" target="_blank" rel="noopener">Visit website</a></div></div>
+      <a class="pc last" href="#order"><h3 style="font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;text-align:center;line-height:1.05">Your project<br>is next &rarr;</h3></a>
     </div>
   </div>
 </section>
@@ -60,9 +60,10 @@
 <section id="about" class="center">
   <h2 class="split">About Me</h2>
   <div class="about">
-    <div class="me rv"><span>M</span><img src="me.webp" alt="MirWeb" onerror="this.remove()"></div>
+    <div class="me rv"><span>Y</span><img src="me.webp" alt="Yasin Mirzaei" onerror="this.remove()"></div>
     <div class="rv">
-      <p>I’m the designer and developer behind MirWeb. I turn ideas into fast, good-looking websites, from the first sketch to launch, designed around your brand and built to work on every screen.</p>
+      <h3 class="who">Yasin Mirzaei</h3>
+      <p>I’m Yasin, the designer and developer behind MirWeb. I turn ideas into fast, good-looking websites, from the first sketch to launch, designed around your brand and built to work on every screen.</p>
       <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>UI / UX</span></div>
     </div>
   </div>
@@ -82,7 +83,8 @@
   <p class="sub rv">Leave your details and I’ll call you back.</p>
   <form id="f" class="rv">
     <input id="name" placeholder="Your name" autocomplete="name" required>
-    <input id="phone" type="tel" placeholder="Phone number" autocomplete="tel" required>
+    <input id="email" type="email" placeholder="Email address" autocomplete="email" required>
+    <div class="phone"><div class="cc"><select id="cc" aria-label="Country code"><option value="+98" selected>Iran +98</option><option value="+994">Azerbaijan +994</option><option value="+90">Turkey +90</option><option value="+93">Afghanistan +93</option><option value="+964">Iraq +964</option><option value="+971">UAE +971</option><option value="+966">Saudi Arabia +966</option><option value="+974">Qatar +974</option><option value="+965">Kuwait +965</option><option value="+968">Oman +968</option><option value="+973">Bahrain +973</option><option value="+92">Pakistan +92</option><option value="+91">India +91</option><option value="+374">Armenia +374</option><option value="+995">Georgia +995</option><option value="+7">Kazakhstan +7</option><option value="+7">Russia +7</option><option value="+49">Germany +49</option><option value="+44">United Kingdom +44</option><option value="+33">France +33</option><option value="+39">Italy +39</option><option value="+34">Spain +34</option><option value="+31">Netherlands +31</option><option value="+46">Sweden +46</option><option value="+1">USA / Canada +1</option><option value="+61">Australia +61</option><option value="+86">China +86</option><option value="+81">Japan +81</option><option value="+82">South Korea +82</option><option value="+55">Brazil +55</option></select></div><input id="phone" type="tel" inputmode="tel" placeholder="Phone number" autocomplete="tel-national" required></div>
     <button class="cta" type="submit">Order Now</button>
     <div id="msg" role="status"></div>
   </form>
@@ -90,9 +92,14 @@
     <a href="https://t.me/YOUR_ID" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 11l20-9-8 20-3-8z"/></svg>Telegram</a>
     <a href="https://wa.me/98XXXXXXXXXX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z"/></svg>WhatsApp</a>
     <a href="https://instagram.com/YOUR_ID" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Instagram</a>
+    <a href="mailto:YOUR_EMAIL@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
   </div>
 </section>
 
+<div id="detail" aria-hidden="true">
+  <div class="dbar"><button id="dback" class="cta ghost" type="button">&larr; Back</button></div>
+  <div class="dwrap"><div class="dvis" id="dvis"></div><div class="dtxt"><small id="dn"></small><h3 id="dtt"></h3><div id="dbody"></div></div></div>
+</div>
 <div class="bigword" id="bw">MIRWEB</div>
 <footer><span>© 2026 MirWeb</span><span>Web design &amp; development</span></footer>
 
